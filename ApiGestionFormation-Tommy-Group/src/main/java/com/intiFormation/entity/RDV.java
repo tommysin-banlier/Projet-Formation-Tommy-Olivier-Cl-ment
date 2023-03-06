@@ -1,5 +1,6 @@
 package com.intiFormation.entity;
 
+
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -15,33 +16,33 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-public class Historique {
+public class RDV {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern="dd/MM/yyyy'T'HH:mm")
 	private Date date;
-
-	private String commentaire;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "idPersonne")
 	private Personne personne;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "idCommercial")
 	private Commercial commercial;
- 
+	
+
+
 	
 	
- 
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -54,12 +55,12 @@ public class Historique {
 		this.date = date;
 	}
 
-	public String getCommentaire() {
-		return commentaire;
+	public Commercial getCommercial() {
+		return commercial;
 	}
 
-	public void setCommentaire(String commentaire) {
-		this.commentaire = commentaire;
+	public void setCommercial(Commercial commercial) {
+		this.commercial = commercial;
 	}
 
 	public Personne getPersonne() {
@@ -70,41 +71,23 @@ public class Historique {
 		this.personne = personne;
 	}
 
-	public Commercial getCommercial() {
-		return commercial;
-	}
-
-	public void setCommercial(Commercial commercial) {
-		this.commercial = commercial;
-	}
-
 	
-	public Historique(int id, Date date, String commentaire, Personne personne, Commercial commercial) {
+	
+	
+	public RDV(int id, Date date, Commercial commercial, Personne personne) {
 		super();
 		this.id = id;
 		this.date = date;
-		this.commentaire = commentaire;
+		this.commercial = commercial;
 		this.personne = personne;
-		this.commercial = commercial;
 	}
 	
-	
-	public Historique(int id, Date date, String commentaire) {
+	public RDV(Date date) {
 		super();
-		this.id = id;
 		this.date = date;
-		this.commentaire = commentaire;
 	}
 
-	
-	public Historique(Date date, String commentaire) {
-		super();
-		this.date = date;
-		this.commentaire = commentaire;
-	}
- 
-	
-	public Historique() {
+	public RDV() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -113,6 +96,14 @@ public class Historique {
 	
 	
 	
-	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

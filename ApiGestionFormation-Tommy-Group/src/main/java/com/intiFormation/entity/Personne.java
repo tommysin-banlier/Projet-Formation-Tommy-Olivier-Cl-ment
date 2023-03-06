@@ -1,5 +1,7 @@
 package com.intiFormation.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,14 @@ public class Personne {
 	private String prenom;
 	private String email;
 	private int age;
+	
+	
+	@OneToMany(mappedBy = "personne")
+	private List<RDV> rdvs;
+	
+	
+	
+	
 	
 	public String getEmail() {
 		return email;
