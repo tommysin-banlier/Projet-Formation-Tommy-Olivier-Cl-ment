@@ -32,27 +32,27 @@ public class UtilisateurController {
 	}
 	
 	@PostMapping("/utilisateurs")
-	public void ajouter(@RequestBody Utilisateur p)
+	public void ajouterUser(@RequestBody Utilisateur p)
 	{
 		utilisateurService.insererUser(p);
 	}
 	
 	
 	@DeleteMapping("/utilisateurs/{id}")
-	public void supprimer(@PathVariable("id") int id)
+	public void supprimerUser(@PathVariable("id") int id)
 	{
 		utilisateurService.enleverUtilisateur(id);
 	}
 	
 	@PutMapping("/utilisateurs")
-	public void modifier(@RequestBody Utilisateur p)
+	public void modifierUser(@RequestBody Utilisateur p)
 	{
 		utilisateurService.insererUser(p);
 		
 	}
 	
 	@GetMapping("/utilisateurs/{id}")
-	public Utilisateur selectByid(@PathVariable("id") int id)
+	public Utilisateur selectByidUser(@PathVariable("id") int id)
 	{
 		Utilisateur personne=utilisateurService.chercher_IdUnUtilisateur(id).get();
 		return personne;

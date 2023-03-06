@@ -11,8 +11,6 @@ public class Utilisateur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String nom;
-	private String prenom;
 	private String username;
 	private String password;
 	@ManyToOne
@@ -23,18 +21,6 @@ public class Utilisateur {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getNom() {
-		return nom;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-	public String getPrenom() {
-		return prenom;
-	}
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
 	}
 	public String getUsername() {
 		return username;
@@ -52,30 +38,6 @@ public class Utilisateur {
 		return role;
 	}
 	public void setRole(Role role) {
-		this.role = role;
-	}
-	public Utilisateur(String nom, String prenom, String username, String password) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.username = username;
-		this.password = password;
-	}
-	public Utilisateur(int id, String nom, String prenom, String username, String password, Role role) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.username = username;
-		this.password = password;
-		this.role = role;
-	}
-	public Utilisateur(String nom, String prenom, String username, String password, Role role) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.username = username;
-		this.password = password;
 		this.role = role;
 	}
 	public Utilisateur() {
