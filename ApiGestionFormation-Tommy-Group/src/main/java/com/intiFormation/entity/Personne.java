@@ -3,6 +3,10 @@ package com.intiFormation.entity;
 import javax.persistence.*;
 
 @Entity
+
+@Inheritance
+@DiscriminatorColumn(name="PERSONNE_TYPE")
+@Table(name="PERSONNE")
 public class Personne {
 
 
@@ -11,6 +15,9 @@ public class Personne {
 	private int id;
 	private String nom;
 	private String prenom;
+	private String email;
+	private int age;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -18,8 +25,7 @@ public class Personne {
 		this.email = email;
 	}
 
-	private String email;
-	private int age;
+	
 	public int getId() {
 		return id;
 	}
