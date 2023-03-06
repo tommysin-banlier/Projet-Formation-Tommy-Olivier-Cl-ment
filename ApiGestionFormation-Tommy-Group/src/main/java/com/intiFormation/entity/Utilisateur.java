@@ -40,9 +40,20 @@ public class Utilisateur {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	public Utilisateur() {
+	public Utilisateur(int id, String username, String password, Role role) {
 		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.role = role;
 	}
+	public Utilisateur(String username, String password, Role role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+	
 	
 	
 	
