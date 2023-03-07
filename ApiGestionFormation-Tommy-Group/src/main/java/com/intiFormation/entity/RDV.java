@@ -1,6 +1,4 @@
 package com.intiFormation.entity;
-
-
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -18,26 +16,21 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 public class RDV {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern="dd/MM/yyyy'T'HH:mm")
+	@DateTimeFormat(pattern = "dd/MM/yyyy'T'HH:mm")
 	private Date date;
-	
-	@ManyToOne
-	@JoinColumn(name = "idPersonne")
-	private Personne personne;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idCommercial")
 	private Commercial commercial;
-	
 
+	@ManyToOne
+	@JoinColumn(name = "idPersonne")
+	private Personne personne;
 
-	
 	
 	public int getId() {
 		return id;
@@ -71,7 +64,10 @@ public class RDV {
 		this.personne = personne;
 	}
 
-	
+
+	public RDV() {
+		super();
+	}
 	
 	
 	public RDV(int id, Date date, Commercial commercial, Personne personne) {
@@ -87,12 +83,6 @@ public class RDV {
 		this.date = date;
 	}
 
-	public RDV() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
 	
 	
 	
@@ -101,9 +91,5 @@ public class RDV {
 	
 	
 	
-	
-	
-	
-	
-	
+
 }

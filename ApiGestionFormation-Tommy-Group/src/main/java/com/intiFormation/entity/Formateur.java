@@ -8,13 +8,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 @DiscriminatorValue("Formateur")
-public class Formateur extends Utilisateur {
-	
+public class Formateur extends Utilisateur{
+
 	@OneToMany(mappedBy = "formateur")
 	private List<Formation> formations;
-	
-	
-	
 	public List<Formation> getFormations() {
 		return formations;
 	}
@@ -22,6 +19,7 @@ public class Formateur extends Utilisateur {
 	public void setFormations(List<Formation> formations) {
 		this.formations = formations;
 	}
+
 
 	
 	public Formateur() {

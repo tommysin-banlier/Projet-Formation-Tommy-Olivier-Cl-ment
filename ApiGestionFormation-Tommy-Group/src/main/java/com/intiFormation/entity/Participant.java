@@ -61,7 +61,6 @@ public class Participant extends Utilisateur {
 		super(id, nom, prenom, age, username, password, role);
 	}
 
-
 	public Participant() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -73,22 +72,15 @@ public class Participant extends Utilisateur {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public Participant(int id, String nom, String prenom, int age) {
 		super(id, nom, prenom, age);
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public Participant(String nom, String prenom, int age) {
 		super(nom, prenom, age);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
-	
 	
 	
 	
