@@ -5,8 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-
-@Inheritance
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name="PERSONNE_TYPE")
 @Table(name="PERSONNE")
 public class Personne {

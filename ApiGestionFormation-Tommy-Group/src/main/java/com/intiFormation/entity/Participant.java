@@ -17,7 +17,7 @@ public class Participant extends Utilisateur {
 	
 	@ManyToMany
 	@JoinTable(
-		name = "Participants-Formations",
+		name = "ParticipantsFormations",
 		joinColumns =  @JoinColumn(name = "Participant") ,
 		inverseJoinColumns =  @JoinColumn(name = "Formation") 
 	)
