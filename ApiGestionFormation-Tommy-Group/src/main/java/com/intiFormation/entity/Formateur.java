@@ -13,22 +13,41 @@ public class Formateur extends Utilisateur{
 	@OneToMany(mappedBy = "formateur")
 	private List<Formation> formations;
 
-	public Formateur(int id, String username, String password, Role role) {
-		super(id, username, password, role);
-		// TODO Auto-generated constructor stub
+
+	public List<Formation> getFormations() {
+		return formations;
 	}
 
-	public Formateur(String username, String password, Role role) {
-		super(username, password, role);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Formateur(int id, String username, String password, Role role, List<Formation> formations) {
-		super(id, username, password, role);
+	public void setFormations(List<Formation> formations) {
 		this.formations = formations;
 	}
-	
-	
+
+	public Formateur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Formateur(int id, String nom, String prenom, int age, String username, String password, Role role) {
+		super(id, nom, prenom, age, username, password, role);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Formateur(int id, String nom, String prenom, int age, String username, String password) {
+		super(id, nom, prenom, age, username, password);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Formateur(int id, String nom, String prenom, int age) {
+		super(id, nom, prenom, age);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Formateur(String nom, String prenom, int age) {
+		super(nom, prenom, age);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	
 	
 	

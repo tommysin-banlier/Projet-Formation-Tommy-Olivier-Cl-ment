@@ -15,15 +15,32 @@ public class Participant extends Utilisateur{
 	@OneToOne(mappedBy = "participant")
 	private Paiement paiement;
 
-	public Participant(int id, String username, String password, Role role) {
-		super(id, username, password, role);
+	public Participant() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Participant(String username, String password, Role role) {
-		super(username, password, role);
+	public Participant(int id, String nom, String prenom, int age, String username, String password, Role role) {
+		super(id, nom, prenom, age, username, password, role);
 		// TODO Auto-generated constructor stub
 	}
+
+	public Participant(int id, String nom, String prenom, int age, String username, String password) {
+		super(id, nom, prenom, age, username, password);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Participant(int id, String nom, String prenom, int age) {
+		super(id, nom, prenom, age);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Participant(String nom, String prenom, int age) {
+		super(nom, prenom, age);
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	
 	
 	

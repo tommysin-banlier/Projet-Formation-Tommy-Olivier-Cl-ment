@@ -7,18 +7,30 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Commercial")
 public class Commercial extends Utilisateur{
 
-	public Commercial(int id, String username, String password, Role role) {
-		super(id, username, password, role);
+	public Commercial() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Commercial(String username, String password, Role role) {
-		super(username, password, role);
+	public Commercial(int id, String nom, String prenom, int age, String username, String password, Role role) {
+		super(id, nom, prenom, age, username, password, role);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
 
+	public Commercial(int id, String nom, String prenom, int age, String username, String password) {
+		super(id, nom, prenom, age, username, password);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Commercial(int id, String nom, String prenom, int age) {
+		super(id, nom, prenom, age);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Commercial(String nom, String prenom, int age) {
+		super(nom, prenom, age);
+		// TODO Auto-generated constructor stub
+	}
+
+	
 }
