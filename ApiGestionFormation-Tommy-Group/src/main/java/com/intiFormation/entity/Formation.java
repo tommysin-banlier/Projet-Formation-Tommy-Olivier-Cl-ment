@@ -40,6 +40,7 @@ public class Formation {
 	private List<Paiement> paiements;
 
 	
+	
 
 
 	public void setPrix(float prix) {
