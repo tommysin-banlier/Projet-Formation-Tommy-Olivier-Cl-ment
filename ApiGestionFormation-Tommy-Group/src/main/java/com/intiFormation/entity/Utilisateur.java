@@ -1,6 +1,8 @@
 package com.intiFormation.entity;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 //test
 
 
@@ -13,6 +15,7 @@ public class Utilisateur extends Personne {
 	
 	@ManyToOne
 	@JoinColumn(name="idRole")
+	@JsonIgnore
 	private Role role;
 	
 	

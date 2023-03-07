@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.intiFormation.entity.Personne;
 @Repository
-public interface IpersonneDao extends JpaRepository<Personne,Integer>{
+public interface PersonneDao extends JpaRepository<Personne,Integer>{
 
 }

@@ -25,36 +25,30 @@ public class UtilisateurController {
 	private IUtilisateurservice utilisateurService;
 	
 	@GetMapping("/utilisateurs")
-	public List<Utilisateur> getAll()
+	public List<Utilisateur> chercherAll()
 	{
-		List<Utilisateur> personnes=utilisateurService.chercher_all_Utilisateur();
+		List<Utilisateur> personnes=utilisateurService.chercherAll();
 		return personnes;
 	}
 	
 	@PostMapping("/utilisateurs")
-	public void ajouterUser(@RequestBody Utilisateur p)
+	public void inserer(@RequestBody Utilisateur p)
 	{
-		utilisateurService.insererUser(p);
+		utilisateurService.inserer(p);
 	}
 	
 	
 	@DeleteMapping("/utilisateurs/{id}")
-	public void supprimerUser(@PathVariable("id") int id)
+	public void enlever(@PathVariable("id") int id)
 	{
-		utilisateurService.enleverUtilisateur(id);
+		utilisateurService.enlever(id);
 	}
 	
-	@PutMapping("/utilisateurs")
-	public void modifierUser(@RequestBody Utilisateur p)
-	{
-		utilisateurService.insererUser(p);
-		
-	}
 	
 	@GetMapping("/utilisateurs/{id}")
-	public Utilisateur selectByidUser(@PathVariable("id") int id)
+	public Utilisateur parId(@PathVariable("id") int id)
 	{
-		Utilisateur personne=utilisateurService.chercher_IdUnUtilisateur(id).get();
+		Utilisateur personne=utilisateurService.parId(id).get();
 		return personne;
 	}
 	

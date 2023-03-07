@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name="PERSONNE_TYPE")
@@ -21,6 +23,7 @@ public class Personne {
 	
 	
 	@OneToMany(mappedBy = "personne")
+	@JsonIgnore
 	private List<RDV> rdvs;
 	
 	

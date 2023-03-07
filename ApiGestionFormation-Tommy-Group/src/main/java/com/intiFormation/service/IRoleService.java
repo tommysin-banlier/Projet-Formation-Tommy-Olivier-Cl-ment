@@ -6,6 +6,6 @@ import com.intiFormation.entity.Role;
 
 public interface IRoleService {
 	
-	public Optional<Role> selectById(int id);
+	public Optional<Role> parId(int id);
 
 }

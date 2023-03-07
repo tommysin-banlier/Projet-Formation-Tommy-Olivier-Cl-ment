@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.intiFormation.entity.Utilisateur;
 @Repository
-public interface IutilisateurDao extends JpaRepository<Utilisateur,Integer>{
+public interface UtilisateurDao extends JpaRepository<Utilisateur,Integer>{
 
 	public Utilisateur findByUsername(String username);
 }

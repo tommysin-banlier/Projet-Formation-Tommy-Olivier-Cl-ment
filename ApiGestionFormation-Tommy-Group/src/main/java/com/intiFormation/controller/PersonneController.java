@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Personne;
-import com.intiFormation.service.IpersonneService;
+import com.intiFormation.service.IPersonneService;
 
 @RestController
 @RequestMapping("/api")
@@ -22,39 +22,33 @@ import com.intiFormation.service.IpersonneService;
 public class PersonneController {
 	
 	@Autowired
-	private IpersonneService personneService;
+	private IPersonneService personneService;
 	
 	@GetMapping("/personnes")
-	public List<Personne> getAllPersonne()
+	public List<Personne> chercherAll()
 	{
-		List<Personne> personnes=personneService.chercher_all();
+		List<Personne> personnes=personneService.chercherAll();
 		return personnes;
 	}
 	
 	@PostMapping("/personnes")
-	public void ajouterPersonne(@RequestBody Personne p)
+	public void inserer(@RequestBody Personne personne)
 	{
-		personneService.inserer(p);
+		personneService.inserer(personne);
 	}
 	
 	
 	@DeleteMapping("/personnes/{id}")
-	public void supprimerPersonne(@PathVariable("id") int id)
+	public void enlever(@PathVariable("id") int id)
 	{
 		personneService.enlever(id);
 	}
 	
-	@PutMapping("/personnes")
-	public void modifierPersonne(@RequestBody Personne p)
-	{
-		personneService.inserer(p);
-		
-	}
 	
 	@GetMapping("/personnes/{id}")
-	public Personne selectByidPersonne(@PathVariable("id") int id)
+	public Personne parId(@PathVariable("id") int id)
 	{
-		Personne personne=personneService.chercher_un(id).get();
+		Personne personne=personneService.parId(id).get();
 		return personne;
 	}
 	
