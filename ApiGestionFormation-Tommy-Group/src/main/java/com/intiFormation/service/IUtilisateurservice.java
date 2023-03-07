@@ -7,11 +7,11 @@ import com.intiFormation.entity.Utilisateur;
 
 public interface IUtilisateurservice {
 	
-	public Utilisateur chercherParUsername(String username);
-	public void insererUser(Utilisateur user);
-	public void enleverUtilisateur(int id);
-	public Optional<Utilisateur> chercher_IdUnUtilisateur(int id);
-	public List<Utilisateur> chercher_all_Utilisateur();
+	public Utilisateur parUsername(String username);
+	public void inserer(Utilisateur user);
+	public void enlever(int id);
+	public Optional<Utilisateur> parId(int id);
+	public List<Utilisateur> chercherAll();
 	public boolean verifierUsername(Utilisateur u);
 	
 

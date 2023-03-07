@@ -5,12 +5,11 @@ import java.util.Optional;
 
 import com.intiFormation.entity.Personne;
 
-public interface IpersonneService {
+public interface IPersonneService {
 	
 	public void inserer(Personne p);
 	public void enlever(int id);
-	public void update(Personne p);
-	public Optional<Personne> chercher_un(int id);
-	public List<Personne> chercher_all();
+	public Optional<Personne> parId(int id);
+	public List<Personne> chercherAll();
 
 }

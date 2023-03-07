@@ -6,28 +6,28 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.intiFormation.dao.IutilisateurDao;
+import com.intiFormation.dao.UtilisateurDao;
 import com.intiFormation.entity.Utilisateur;
 @Service
 public class UtilisateurService implements IUtilisateurservice{
 	
 	@Autowired
-	private IutilisateurDao utilisateurDao;
+	private UtilisateurDao utilisateurDao;
 	
-	public Utilisateur chercherParUsername(String username)
+	public Utilisateur parUsername(String username)
 	{return utilisateurDao.findByUsername(username);}
 	
-	public void insererUser(Utilisateur user)
+	public void inserer(Utilisateur user)
 	{utilisateurDao.save(user);}
 	
-	public void enleverUtilisateur(int id)
+	public void enlever(int id)
 	{utilisateurDao.deleteById(id);}
 	
-	public Optional<Utilisateur> chercher_IdUnUtilisateur(int id)
+	public Optional<Utilisateur> parId(int id)
 	{Optional <Utilisateur> opt = utilisateurDao.findById(id);
 	return opt;}
 	
-	public List<Utilisateur> chercher_all_Utilisateur()
+	public List<Utilisateur> chercherAll()
 	{return utilisateurDao.findAll();}
 	
 	public boolean verifierUsername(Utilisateur u)

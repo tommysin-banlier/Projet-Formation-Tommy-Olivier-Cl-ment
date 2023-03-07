@@ -12,7 +12,7 @@ public class RoleService  implements IRoleService{
 	@Autowired
 	private RoleDao roleDao;
 	
-	public Optional<Role> selectById(int id)
+	public Optional<Role> parId(int id)
 	{
 		Optional<Role> opRole = roleDao.findById(id);
 		return opRole;
