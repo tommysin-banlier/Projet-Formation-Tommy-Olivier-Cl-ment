@@ -8,16 +8,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Role {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nom;
 	
 	@OneToMany(mappedBy = "role")
+	@JsonIgnore
 	private List<Utilisateur> utilisateurs;
 
+	
+	
 	public int getId() {
 		return id;
 	}

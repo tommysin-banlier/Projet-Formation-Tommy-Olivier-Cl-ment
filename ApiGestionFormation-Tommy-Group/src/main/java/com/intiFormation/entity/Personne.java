@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name="PERSONNE_TYPE")
+//@DiscriminatorColumn(name="PERSONNE_TYPE")
 @Table(name="PERSONNE")
 public class Personne {
 

@@ -1,6 +1,7 @@
 package com.intiFormation.entity;
 
 import java.util.Date;
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -15,16 +16,22 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Formation {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nom;
 	private double prix;
+	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateDebut;
+	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	
@@ -33,10 +40,11 @@ public class Formation {
 	private Formateur formateur;
 	
 	@ManyToMany(mappedBy = "formations")
+	@JsonIgnore
 	private List<Participant> participants;
 	
-	
 	@OneToMany(mappedBy = "formation")
+	@JsonIgnore
 	private List<Paiement> paiements;
 
 	

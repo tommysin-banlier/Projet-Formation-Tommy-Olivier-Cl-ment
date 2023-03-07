@@ -10,7 +10,10 @@ import javax.persistence.ManyToOne;
 
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
+//@DiscriminatorValue("Participant")
 public class Participant extends Utilisateur {
 
 	
@@ -21,13 +24,16 @@ public class Participant extends Utilisateur {
 		joinColumns =  @JoinColumn(name = "Participant") ,
 		inverseJoinColumns =  @JoinColumn(name = "Formation") 
 	)
+	@JsonIgnore
 	private List<Formation> formations;
 	
 	
 	@OneToOne(mappedBy = "participant")
+	@JsonIgnore
 	private Paiement paiement;
 
 
+	
 	
 	public List<Formation> getFormations() {
 		return formations;

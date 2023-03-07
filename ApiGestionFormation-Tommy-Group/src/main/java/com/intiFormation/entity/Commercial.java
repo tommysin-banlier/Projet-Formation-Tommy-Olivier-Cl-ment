@@ -7,12 +7,15 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@DiscriminatorValue("Commercial")
+//@DiscriminatorValue("Commercial")
 public class Commercial extends Utilisateur {
 
 	
 	@OneToMany(mappedBy = "commercial")
+	@JsonIgnore
 	private List<RDV> rdvs;
 	
 	
