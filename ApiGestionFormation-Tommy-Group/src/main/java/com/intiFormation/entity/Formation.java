@@ -34,6 +34,7 @@ public class Formation {
 	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dateFin;
 	
 	@ManyToOne
 	@JoinColumn(name = "idFormateur")
@@ -63,17 +64,6 @@ public class Formation {
 	public void setPaiements(List<Paiement> paiements) {
 		this.paiements = paiements;
 	}
-	
-	
-	public Formation() {
-		super();
-	}
-
-
-	
-	
-	
-	
 	
 
 	public int getId() {
@@ -108,6 +98,15 @@ public class Formation {
 		this.dateDebut = dateDebut;
 	}
 
+	public Date getDateFin() {
+		return dateFin;
+	}
+
+	public void setDateFin(Date dateFin) {
+		this.dateFin = dateFin;
+	}
+
+	
 	public Formateur getFormateur() {
 		return formateur;
 	}
@@ -123,4 +122,32 @@ public class Formation {
 	public void setParticipants(List<Participant> participants) {
 		this.participants = participants;
 	}
+	
+	
+
+	
+	
+	public Formation() {
+		super();
+	}
+
+
+	public Formation(String nom, double prix, Date dateDebut, Date dateFin) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
