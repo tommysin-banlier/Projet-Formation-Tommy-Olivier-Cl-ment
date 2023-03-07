@@ -1,5 +1,4 @@
 package com.intiFormation.entity;
-
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -32,6 +31,7 @@ public class RDV {
 	@JoinColumn(name = "idPersonne")
 	private Personne personne;
 
+	
 	public int getId() {
 		return id;
 	}
@@ -64,9 +64,31 @@ public class RDV {
 		this.personne = personne;
 	}
 
+
 	public RDV() {
 		super();
 	}
+	
+	
+	public RDV(int id, Date date, Commercial commercial, Personne personne) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.commercial = commercial;
+		this.personne = personne;
+	}
+	
+	public RDV(Date date) {
+		super();
+		this.date = date;
+	}
+
+	
+	
+	
+
+	
+	
 	
 	
 

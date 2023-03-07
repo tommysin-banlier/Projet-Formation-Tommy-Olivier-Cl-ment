@@ -1,10 +1,11 @@
 package com.intiFormation.entity;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
-
-@Inheritance
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name="PERSONNE_TYPE")
 @Table(name="PERSONNE")
 public class Personne {
@@ -17,6 +18,14 @@ public class Personne {
 	private String prenom;
 	private String email;
 	private int age;
+	
+	
+	@OneToMany(mappedBy = "personne")
+	private List<RDV> rdvs;
+	
+	
+	
+	
 	
 	public String getEmail() {
 		return email;

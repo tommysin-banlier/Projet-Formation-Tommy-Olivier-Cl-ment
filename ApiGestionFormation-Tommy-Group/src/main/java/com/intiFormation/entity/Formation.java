@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -31,11 +32,40 @@ public class Formation {
 	@JoinColumn(name = "idFormateur")
 	private Formateur formateur;
 	
-	@OneToMany(mappedBy = "participant")
+	@ManyToMany(mappedBy = "formations")
 	private List<Participant> participants;
+	
 	
 	@OneToMany(mappedBy = "formation")
 	private List<Paiement> paiements;
+
+	
+
+
+	public void setPrix(float prix) {
+		this.prix = prix;
+	}
+
+
+	public List<Paiement> getPaiements() {
+		return paiements;
+	}
+
+	public void setPaiements(List<Paiement> paiements) {
+		this.paiements = paiements;
+	}
+	
+	
+	public Formation() {
+		super();
+	}
+
+
+	
+	
+	
+	
+	
 
 	public int getId() {
 		return id;

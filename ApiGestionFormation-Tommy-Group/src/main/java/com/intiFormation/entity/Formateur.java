@@ -12,8 +12,6 @@ public class Formateur extends Utilisateur{
 
 	@OneToMany(mappedBy = "formateur")
 	private List<Formation> formations;
-
-
 	public List<Formation> getFormations() {
 		return formations;
 	}
@@ -22,6 +20,8 @@ public class Formateur extends Utilisateur{
 		this.formations = formations;
 	}
 
+
+	
 	public Formateur() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -47,7 +47,21 @@ public class Formateur extends Utilisateur{
 		// TODO Auto-generated constructor stub
 	}
 
+	/*
+	@Override
+	public String toString() {
+		return "Formateur [formations=" + formations + "]";
+	}
 
+	
+	*/
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
