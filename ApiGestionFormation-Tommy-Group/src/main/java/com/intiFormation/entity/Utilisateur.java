@@ -15,7 +15,6 @@ public class Utilisateur extends Personne {
 	
 	@ManyToOne
 	@JoinColumn(name="idRole")
-	@JsonIgnore
 	private Role role;
 	
 	

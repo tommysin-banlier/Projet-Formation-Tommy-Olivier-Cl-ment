@@ -50,7 +50,7 @@ public class RDVController {
 		}
 		
 		//pour méthode “parId”
-		@GetMapping("/historiques/{id}")
+		@GetMapping("/rdvs/{id}")
 		public RDV parId(@PathVariable("id") int id)
 		{
 			return rdvService.parId(id).get();

@@ -40,8 +40,8 @@ public class FormateurController {
 		formateurService.enlever(id);
 	}
 	
-	@GetMapping("/personnes/{id}")
-	public Personne parId(@PathVariable("id") int id) {
+	@GetMapping("/formateurs/{id}")
+	public Formateur parId(@PathVariable("id") int id) {
 		return formateurService.parId(id).get();
 	}
 	
