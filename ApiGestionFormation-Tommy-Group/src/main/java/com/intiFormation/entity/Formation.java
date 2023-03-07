@@ -11,26 +11,22 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 public class Formation {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String nom; 
-	private float prix;
+	private String nom;
+	private double prix;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateDebut;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="dd/MM/yyyy")
-	private Date dateFin;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	
 	@ManyToOne
 	@JoinColumn(name = "idFormateur")
@@ -43,6 +39,33 @@ public class Formation {
 	@OneToMany(mappedBy = "formation")
 	private List<Paiement> paiements;
 
+	
+	
+
+
+	public void setPrix(float prix) {
+		this.prix = prix;
+	}
+
+
+	public List<Paiement> getPaiements() {
+		return paiements;
+	}
+
+	public void setPaiements(List<Paiement> paiements) {
+		this.paiements = paiements;
+	}
+	
+	
+	public Formation() {
+		super();
+	}
+
+
+	
+	
+	
+	
 	
 
 	public int getId() {
@@ -61,11 +84,11 @@ public class Formation {
 		this.nom = nom;
 	}
 
-	public float getPrix() {
+	public double getPrix() {
 		return prix;
 	}
 
-	public void setPrix(float prix) {
+	public void setPrix(double prix) {
 		this.prix = prix;
 	}
 
@@ -75,14 +98,6 @@ public class Formation {
 
 	public void setDateDebut(Date dateDebut) {
 		this.dateDebut = dateDebut;
-	}
-
-	public Date getDateFin() {
-		return dateFin;
-	}
-
-	public void setDateFin(Date dateFin) {
-		this.dateFin = dateFin;
 	}
 
 	public Formateur getFormateur() {
@@ -100,50 +115,4 @@ public class Formation {
 	public void setParticipants(List<Participant> participants) {
 		this.participants = participants;
 	}
-
-	public List<Paiement> getPaiements() {
-		return paiements;
-	}
-
-	public void setPaiements(List<Paiement> paiements) {
-		this.paiements = paiements;
-	}
-
-	public Formation(int id, String nom, float prix, Date dateDebut, Date dateFin, Formateur formateur,
-			List<Participant> participants, List<Paiement> paiements) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.prix = prix;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-		this.formateur = formateur;
-		this.participants = participants;
-		this.paiements = paiements;
-	}
-	
-	public Formation(String nom, float prix, Date dateDebut, Date dateFin) {
-		super();
-		this.nom = nom;
-		this.prix = prix;
-		this.dateDebut = dateDebut;
-		this.dateFin = dateFin;
-	}
-
-	public Formation() {
-		super();
-	}
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

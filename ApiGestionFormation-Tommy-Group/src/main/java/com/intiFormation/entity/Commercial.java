@@ -7,7 +7,6 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
-
 @Entity
 @DiscriminatorValue("Commercial")
 public class Commercial extends Utilisateur {
@@ -28,8 +27,7 @@ public class Commercial extends Utilisateur {
 		this.rdvs = rdvs;
 	}
 	
-	
-	
+
 
 	public Commercial() {
 		super();
@@ -56,6 +54,7 @@ public class Commercial extends Utilisateur {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public Commercial(int id, String nom, String prenom, int age, String username, String password, Role role,
 			List<RDV> rdvs) {
 		super(id, nom, prenom, age, username, password, role);
@@ -70,7 +69,6 @@ public class Commercial extends Utilisateur {
 	
 	
 	
-	
-	
+
 	
 }

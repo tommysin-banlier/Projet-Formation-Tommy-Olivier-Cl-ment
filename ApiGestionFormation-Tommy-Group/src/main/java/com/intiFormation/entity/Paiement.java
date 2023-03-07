@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToOne;
 
 @Entity
 public class Paiement {
@@ -15,25 +15,19 @@ public class Paiement {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private float montant;
-	
-	
-	@ManyToOne
+
+	@OneToOne
 	@JoinColumn(name = "idParticipant")
 	private Participant participant;
-	
-	
+
 	@ManyToOne
 	@JoinColumn(name = "idFormation")
 	private Formation formation;
 
 
-	
-	
-	
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
@@ -69,7 +63,6 @@ public class Paiement {
 		this.formation = formation;
 	}
 
-
 	
 	public Paiement(int id, float montant, Participant participant, Formation formation) {
 		super();
@@ -90,13 +83,6 @@ public class Paiement {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
