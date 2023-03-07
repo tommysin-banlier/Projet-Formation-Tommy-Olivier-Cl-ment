@@ -44,6 +44,7 @@ public class Formation {
 	private List<Paiement> paiements;
 
 	
+	
 
 	public int getId() {
 		return id;
