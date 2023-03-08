@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.service.CommercialService;
+import com.intiFormation.service.ICommercialService;
 
 
 @RestController
@@ -22,7 +23,7 @@ import com.intiFormation.service.CommercialService;
 public class CommercialController {
 	
 	@Autowired
-	private CommercialService commercialService;
+	private ICommercialService commercialService;
 	
 	    //pour méthode “chercherAll” :
 		@GetMapping("/commercials")

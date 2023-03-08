@@ -11,7 +11,7 @@ import com.intiFormation.dao.CommercialDao;
 import com.intiFormation.entity.Commercial;
 
 @Service
-public class CommercialService implements ICommercialServive {
+public class CommercialService implements ICommercialService {
 
 	@Autowired
 	private CommercialDao commercialDao;

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Historique;
 import com.intiFormation.entity.RDV;
+import com.intiFormation.service.IRDVService;
 import com.intiFormation.service.RDVService;
 
 
@@ -24,7 +25,7 @@ import com.intiFormation.service.RDVService;
 public class RDVController {
 	
 	@Autowired
-	private RDVService rdvService;
+	private IRDVService rdvService;
 	
 	    //pour méthode “chercherAll” :
 		@GetMapping("/rdvs")
