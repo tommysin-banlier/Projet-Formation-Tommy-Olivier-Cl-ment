@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.intiFormation.entity.Commercial;
 import com.intiFormation.entity.Historique;
 import com.intiFormation.service.HistoriqueService;
+import com.intiFormation.service.IHistoriqueService;
 
 @RestController
 @RequestMapping("/api")
@@ -22,7 +23,7 @@ import com.intiFormation.service.HistoriqueService;
 public class HistoriqueController {
 	
 	@Autowired
-	private HistoriqueService historiqueService;
+	private IHistoriqueService historiqueService;
 	
 	    //pour méthode “chercherAll” :
 		@GetMapping("/historiques")

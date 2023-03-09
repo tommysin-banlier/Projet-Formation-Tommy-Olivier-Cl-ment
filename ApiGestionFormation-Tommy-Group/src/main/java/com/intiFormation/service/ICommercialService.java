@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import com.intiFormation.entity.Commercial;
 
-public interface ICommercialServive {
+public interface ICommercialService {
 	    
 	    //ajouter un commercial
 		public void inserer(Commercial commercial);
