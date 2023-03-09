@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.intiFormation.entity.Paiement;
+import com.intiFormation.entity.Participant;
 import com.intiFormation.service.IPaiementService;
 
 
@@ -49,7 +50,10 @@ public class PaiementController {
 	}
 	
 	
-	
+	@GetMapping("/paiements/formation/{id}")
+	public List<Paiement> parFormation(@PathVariable("id") int id) {
+		return paiementService.parFormation(id);
+	}
 	
 	
 	

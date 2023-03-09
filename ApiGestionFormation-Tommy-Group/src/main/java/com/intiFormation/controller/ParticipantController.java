@@ -45,6 +45,11 @@ public class ParticipantController {
 		return participantService.parId(id).get();
 	}
 	
+	@GetMapping("/participants/formation/{id}")
+	public List<Participant> parFormation(@PathVariable("id") int id) {
+		return participantService.parFormation(id);
+	}
+	
 	
 	
 	

@@ -8,4 +8,11 @@ import com.intiFormation.entity.RDV;
 
 public interface RDVDao extends JpaRepository<RDV, Integer>  {
 
+	
+	
+	
+	
+	
+	
+	
 }

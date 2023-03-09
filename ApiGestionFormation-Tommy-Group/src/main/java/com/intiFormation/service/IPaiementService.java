@@ -12,7 +12,7 @@ public interface IPaiementService {
 	public void enlever(int id);
 	public List<Paiement> chercherAll();
 	public Optional<Paiement> parId(int id);
-	
+	public List<Paiement> parFormation(int id);
 	
 	
 	
