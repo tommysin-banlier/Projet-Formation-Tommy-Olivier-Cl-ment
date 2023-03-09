@@ -26,7 +26,7 @@ public class Formation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nom;
-	private double prix;
+	private float prix;
 	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -52,9 +52,7 @@ public class Formation {
 	
 
 
-	public void setPrix(float prix) {
-		this.prix = prix;
-	}
+
 
 
 	public List<Paiement> getPaiements() {
@@ -82,11 +80,11 @@ public class Formation {
 		this.nom = nom;
 	}
 
-	public double getPrix() {
+	public float getPrix() {
 		return prix;
 	}
 
-	public void setPrix(double prix) {
+	public void setPrix(float prix) {
 		this.prix = prix;
 	}
 
@@ -132,7 +130,7 @@ public class Formation {
 	}
 
 
-	public Formation(String nom, double prix, Date dateDebut, Date dateFin) {
+	public Formation(String nom, float prix, Date dateDebut, Date dateFin) {
 		super();
 		this.nom = nom;
 		this.prix = prix;
