@@ -12,7 +12,7 @@ public interface IParticipantService {
 	public void enlever(int id);
 	public List<Participant> chercherAll();
 	public Optional<Participant> parId(int id);
-	
+	public List<Participant> parFormation(int id);
 	
 	
 }

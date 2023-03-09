@@ -2,6 +2,8 @@ package com.intiFormation.controller;
 
 import java.util.List;
 
+import org.apache.tomcat.util.http.parser.Upgrade;
+import org.hibernate.hql.internal.ast.tree.IntoClause;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JacksonInject.Value;
 import com.intiFormation.entity.Utilisateur;
 import com.intiFormation.service.IUtilisateurservice;
 @RestController
@@ -52,5 +55,8 @@ public class UtilisateurController {
 		return personne;
 	}
 	
+	
+	
 
+	
 }

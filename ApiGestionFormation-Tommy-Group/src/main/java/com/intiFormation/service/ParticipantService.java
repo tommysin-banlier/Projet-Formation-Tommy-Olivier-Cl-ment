@@ -33,6 +33,10 @@ public class ParticipantService implements IParticipantService {
 		return participantDao.findById(id);
 	}
 	
+	public List<Participant> parFormation(int id) {
+		return participantDao.parFormation(id);
+	}
+	
 	
 	
 	

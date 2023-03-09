@@ -32,6 +32,10 @@ public class PaiementService implements IPaiementService {
 		return paiementDao.findById(id);
 	}
 	
+	public List<Paiement> parFormation(int id) {
+		return paiementDao.parFormation(id);
+	}
+	
 	
 	
 	
