@@ -52,5 +52,23 @@ public class UtilisateurController {
 		return personne;
 	}
 	
+	@PostMapping("/upgradeParticipant/{id}")
+	public void upgradeParticipant(@PathVariable("id") int id)
+	{
+		utilisateurService.upgradeParticipant(id);
+	}
+	
+	@PostMapping("/upgradeFormateur/{id}")
+	public void upgradeFormateur(@PathVariable("id") int id)
+	{
+		utilisateurService.upgradeFormateur(id);
+	}
+	
+	@PostMapping("/upgradeCommercial/{id}")
+	public void upgradeCommercial(@PathVariable("id") int id)
+	{
+		utilisateurService.upgradeCommercial(id);
+	}
+	
 
 }

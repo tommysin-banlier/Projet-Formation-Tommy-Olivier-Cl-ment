@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.intiFormation.dao.UtilisateurDao;
@@ -29,6 +30,15 @@ public class UtilisateurService implements IUtilisateurservice{
 	
 	public List<Utilisateur> chercherAll()
 	{return utilisateurDao.findAll();}
+	
+	public void upgradeParticipant(int id)
+	{utilisateurDao.upgradeParticipant(id);}
+	
+	public void upgradeFormateur(int id)
+	{utilisateurDao.upgradeFormateur(id);}
+	
+	public void upgradeCommercial(int id)
+	{utilisateurDao.upgradeCommercial(id);}
 	
 	public boolean verifierUsername(Utilisateur u)
 	{

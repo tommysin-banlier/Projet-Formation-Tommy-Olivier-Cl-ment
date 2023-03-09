@@ -13,6 +13,9 @@ public interface IUtilisateurservice {
 	public Optional<Utilisateur> parId(int id);
 	public List<Utilisateur> chercherAll();
 	public boolean verifierUsername(Utilisateur u);
+	public void upgradeParticipant(int id);
+	public void upgradeFormateur(int id);
+	public void upgradeCommercial(int id);
 	
 
 }
