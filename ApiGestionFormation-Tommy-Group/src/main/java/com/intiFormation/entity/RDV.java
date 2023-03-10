@@ -13,6 +13,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class RDV {
 
@@ -20,7 +22,8 @@ public class RDV {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy'T'HH:mm")
+	//@DateTimeFormat(pattern = "dd/MM/yyyy'T'HH:mm")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm", locale="fr_Fr", timezone= "Europe/Amsterdam")
 	private Date date;
 
 	@ManyToOne

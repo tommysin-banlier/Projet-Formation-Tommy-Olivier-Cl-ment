@@ -52,6 +52,12 @@ public class PersonneController {
 		return personne;
 	}
 	
+	@PostMapping("/upgradeUtilisateur/{id}")
+	public void upgradeUtilisateur(@PathVariable("id") int id)
+	{
+		personneService.upgradeUtilisateur(id);
+	}
+	
 	
 	
 	
