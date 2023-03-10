@@ -33,6 +33,10 @@ public class FormationService implements IFormationService {
 		return formationDao.findById(id);
 	}
 	
+	public List<Formation> parFormateur(int id) {
+		return formationDao.parFormateur(id);
+	}
+	
 	
 	
 	

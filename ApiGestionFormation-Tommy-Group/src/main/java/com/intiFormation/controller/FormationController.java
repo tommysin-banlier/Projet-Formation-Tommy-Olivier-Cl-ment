@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import com.intiFormation.entity.Formation;
 import com.intiFormation.service.IFormationService;
 
@@ -45,7 +46,10 @@ public class FormationController {
 		return formationService.parId(id).get();
 	}
 	
-	
+	@GetMapping("/formations/formateur/{id}")
+	public List<Formation> parFormation(@PathVariable("id") int id) {
+		return formationService.parFormateur(id);
+	}
 	
 	
 	
