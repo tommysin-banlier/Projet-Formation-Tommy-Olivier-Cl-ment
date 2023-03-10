@@ -11,5 +11,6 @@ public interface IPersonneService {
 	public void enlever(int id);
 	public Optional<Personne> parId(int id);
 	public List<Personne> chercherAll();
+	public void upgradeUtilisateur(int id);
 
 }
