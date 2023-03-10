@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.intiFormation.entity.Formateur;
+import com.intiFormation.entity.Formation;
+import com.intiFormation.entity.Paiement;
 import com.intiFormation.entity.Personne;
 import com.intiFormation.service.IFormateurService;
 
@@ -45,8 +47,12 @@ public class FormateurController {
 		return formateurService.parId(id).get();
 	}
 	
-	
-	
+/*	
+	@GetMapping("/formateurs/formation/{id}")
+	public List<Formateur> parFormation(@PathVariable("id") int id) {
+		return formateurService.parFormation(id);
+	}
+*/	
 	
 	
 	

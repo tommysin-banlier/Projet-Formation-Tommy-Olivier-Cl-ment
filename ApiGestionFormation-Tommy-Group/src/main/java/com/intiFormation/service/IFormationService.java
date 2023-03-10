@@ -12,7 +12,7 @@ public interface IFormationService {
 	public void enlever(int id);
 	public List<Formation> chercherAll();
 	public Optional<Formation> parId(int id);
-	
+	public List<Formation> parFormateur(int id);
 	
 	
 }
