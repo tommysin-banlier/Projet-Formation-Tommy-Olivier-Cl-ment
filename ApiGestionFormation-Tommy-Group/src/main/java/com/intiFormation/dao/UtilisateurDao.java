@@ -34,6 +34,5 @@ public interface UtilisateurDao extends JpaRepository<Utilisateur,Integer>{
 	@Query(value ="INSERT INTO commercial (id) VALUES(:idCommercial)", nativeQuery = true)
 	public void upgradeCommercial(@Param("idCommercial")int id);
 	
-	
 
 }

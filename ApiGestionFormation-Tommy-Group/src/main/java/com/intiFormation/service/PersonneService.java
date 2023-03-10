@@ -29,4 +29,7 @@ public class PersonneService implements IPersonneService {
 	
 	public List<Personne> chercherAll()
 	{return personneDao.findAll();}
+	
+	public void upgradeUtilisateur(int id)
+	{personneDao.upgradeUtilisateur(id);}
 }

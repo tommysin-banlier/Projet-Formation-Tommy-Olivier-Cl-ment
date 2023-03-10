@@ -56,9 +56,9 @@ public class UtilisateurController {
 	}
 	
 	@PostMapping("/upgradeParticipant/{id}")
-	public void upgradeParticipant(@PathVariable("id") int id)
+	public void upgradeParticipant(@PathVariable("id") int idp)
 	{
-		utilisateurService.upgradeParticipant(id);
+		utilisateurService.upgradeParticipant(idp);
 	}
 	
 	@PostMapping("/upgradeFormateur/{id}")
