@@ -13,6 +13,7 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -23,7 +24,8 @@ public class Historique {
 	private int id;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern="dd/MM/yyyy'T'HH:mm")
+	//@DateTimeFormat(pattern="dd/MM/yyyy'T'HH:mm")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm", locale="fr_Fr", timezone= "Europe/Amsterdam")
 	private Date date;
 
 	private String commentaire;
