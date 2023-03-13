@@ -13,7 +13,7 @@ public interface IPaiementService {
 	public List<Paiement> chercherAll();
 	public Optional<Paiement> parId(int id);
 	public List<Paiement> parFormation(int id);
-	
+	public Paiement parFormationParParticipant(int idFormation, int idParticipant);
 	
 	
 	

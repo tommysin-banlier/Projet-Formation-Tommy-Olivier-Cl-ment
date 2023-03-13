@@ -56,6 +56,13 @@ public class PaiementController {
 	}
 	
 	
+	@GetMapping("/paiements/formation/{idFormation}/participant/{idParticipant}")
+	public Paiement parFormationParParticipant(@PathVariable("idFormation") int idFormation, @PathVariable("idParticipant") int idParticipant) {
+		return paiementService.parFormationParParticipant(idFormation, idParticipant);
+	}
+	
+	
+	
 	
 	
 	

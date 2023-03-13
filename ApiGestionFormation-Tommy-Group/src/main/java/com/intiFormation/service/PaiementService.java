@@ -36,7 +36,9 @@ public class PaiementService implements IPaiementService {
 		return paiementDao.parFormation(id);
 	}
 	
-	
+	public Paiement parFormationParParticipant(int idFormation, int idParticipant) {
+		return paiementDao.parFormationParParticipant(idFormation, idParticipant);
+	}
 	
 	
 	
