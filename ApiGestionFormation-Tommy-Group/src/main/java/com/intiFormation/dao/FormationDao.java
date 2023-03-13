@@ -17,8 +17,13 @@ public interface FormationDao extends JpaRepository<Formation, Integer> {
 	public List<Formation> parFormateur(@Param("id") Integer id);
 	
 	
-	
+	@Query("SELECT formation FROM Formation formation JOIN formation.participants participant WHERE participant.id = :id")
+	public List<Formation> parParticipant(@Param("id") Integer id);
 
+	
+	
+	
+	
 	
 	
 	

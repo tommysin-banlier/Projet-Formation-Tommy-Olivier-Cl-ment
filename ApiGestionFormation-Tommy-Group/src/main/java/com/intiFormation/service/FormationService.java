@@ -37,6 +37,11 @@ public class FormationService implements IFormationService {
 		return formationDao.parFormateur(id);
 	}
 	
+	public List<Formation> parParticipant(int id) {
+		return formationDao.parParticipant(id);
+	}
+	
+	
 	
 	
 	

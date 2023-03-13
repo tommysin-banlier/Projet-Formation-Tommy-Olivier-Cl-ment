@@ -13,6 +13,8 @@ public interface IFormationService {
 	public List<Formation> chercherAll();
 	public Optional<Formation> parId(int id);
 	public List<Formation> parFormateur(int id);
+	public List<Formation> parParticipant(int id);
+	
 	
 	
 }

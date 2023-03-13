@@ -1,6 +1,7 @@
 package com.intiFormation.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,10 +21,12 @@ public class Paiement {
 
 	@OneToOne
 	@JoinColumn(name = "idParticipant")
+	@JsonIgnore
 	private Participant participant;
 
 	@ManyToOne
 	@JoinColumn(name = "idFormation")
+	@JsonIgnore
 	private Formation formation;
 
 
