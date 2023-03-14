@@ -72,7 +72,13 @@ public class UtilisateurController {
 	{
 		utilisateurService.upgradeCommercial(id);
 	}
-
+	
+	@GetMapping("/utilisateursUsername/{username}")
+	public Utilisateur parUsername(@PathVariable("username") String username)
+	{
+		Utilisateur personne=utilisateurService.parUsername(username);
+		return personne;
+	}
 	
 	
 	

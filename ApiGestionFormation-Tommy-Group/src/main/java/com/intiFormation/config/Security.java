@@ -48,6 +48,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 		.anyRequest().authenticated()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().addFilterBefore(requestFilter, UsernamePasswordAuthenticationFilter.class)
+		.logout()
 		;
 	}
 	
